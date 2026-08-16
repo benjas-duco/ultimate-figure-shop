@@ -6,48 +6,56 @@
     <title>ultimate-figure-shop</title>
 </head>
 <body>
-    <header>
+    <header style="width: fit-content; margin-inline: auto;">
         <!-- Titulo del sitio -->
         <h1>Ultimate Figure Shop</h1>
-        <p>Figuras unicas para ti!</p>
+        <p style="width: fit-content; margin-inline: auto;">Figuras unicas para ti!</p>
     </header>
-    <nav>
+    <hr>
+    <nav style="width: fit-content; margin-inline: auto;">
         <!-- Indice para los cagatolos y secciones -->
+        
         <a href="#inicio">Inicio</a>
         <a href="#productos">Productos</a>
         <a href="#contacto">Contacto</a>
     </nav>
-    <main>
+    <hr>
+    <main style="width: fit-content; margin-inline: auto;">
         <!-- aqui empezar con la seccion  de catalogos con inicio, productos, precios y contacto -->
         <section id = "productos" >
             <h2>Productos destacados</h2>
-            <article>
-                <h3>POP UP PARADE: Hatsune Miku Cinnamorrol Ver.</h3>
-                <img src="imagenes/HatsuneMiku.webp" alt="Hatsune Miku" width="300">
-                <p>POP UP PARADE Hatsune Miku: Cinnamoroll Collaboration Ver. L Size</p>
-                <p><Strong>Precio: $56.990</Strong></p>
-            </article>
-            <article>
-                <h3>POP UP PARADE: Frieren</h3>
-                <img src="imagenes/Frieren.webp" alt="Frieren" width="300">
-                <p>POP UP PARADE Frieren: Braids Ver.</p>
-                <p><Strong>Precio: $30.990</Strong></p>
-            </article>
-            <article>
-                <h3>POP UP PARADE: Kirby Raider</h3>
-                <img src="imagenes/kirby.webp" alt="" width="300">
-                <p>POP UP PARADE Kirby: Wheelie Rider Ver.</p>
-                <p><Strong>Precio: $40.990</Strong></p>
-            </article>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Direccion: Av. Pepito Suarez 435</p>
-            <p>Telefono: +56 9 5234 6543</p>
-            <p>Correo: contacto@figureshop.com</p>
+            <div style="display: flex;">
+                <div style="width: 300px; margin-inline: 10px;">
+                    <h2>Hatsune Miku</h2>
+                    <a href="figure-1.html"><img src="imagenes/HatsuneMiku.webp" alt="Hatsune Miku" width="300"></a>
+                    <p>POP UP PARADE Hatsune Miku: Cinnamoroll Collaboration Ver. L Size</p>
+                    <p><Strong>Precio: $56.990</Strong></p>
+                </div>
+                <div style="width: 300px; margin-inline: 10px;">
+                    <h2>Frieren</h2>
+                    <img src="imagenes/Frieren.webp" alt="Frieren" width="300">
+                    <p>POP UP PARADE Frieren: Braids Ver.</p>
+                    <p><Strong>Precio: $30.990</Strong></p>
+                </div>
+                <div style="width: 300px; margin-inline: 10px;">
+                    <h2>Kirby Raider</h2>
+                    <img src="imagenes/kirby.webp" alt="" width="300">
+                    <p>POP UP PARADE Kirby: Wheelie Rider Ver.</p>
+                    <p><Strong>Precio: $40.990</Strong></p>
+                </div>
+            </div>
         </section>
     </main>
+
+    <hr>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Direccion: Av. Pepito Suarez 435</p>
+        <p>Telefono: +56 9 5234 6543</p>
+        <p>Correo: contacto@figureshop.com</p>
+    </section>
+    
     <footer>
         <p>@2026 Ultimate Figure Shop</p>
     </footer>
