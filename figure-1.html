@@ -5,84 +5,84 @@
     <meta charset="UTF-8">
     <title>Ultimate Figure Shop</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="imagenes/logo.png">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg bg-dark"
-            data-bs-theme="dark">
-            <div class="container">
-            <a class="navbar-brand"
-            href="#">
-            Ultimate Figure Shop
-            </a>
-            <a class="navbar-brand" 
-            href="#">
-            Figuras unicas para ti!
-            </a>
-            <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#menuPrincipal"
-            aria-controls="menuPrincipal"
-            aria-expanded="false"
-            aria-label="Mostrar navegación">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse"
-            id="menuPrincipal">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link active"
-                        href="index.html">
-                        Inicio
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                        href="index.html">
-                        Productos
-                    </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link"
-                        href="#">
-                        Contacto
-                        </a>
-                    </li>
-                </ul>
+        <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+            <div class="container-fluid">
+                <img src="imagenes/logo.png" width="70">
+                
+                <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#menuPrincipal"
+                aria-controls="menuPrincipal"
+                aria-expanded="false"
+                aria-label="Mostrar navegación">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="menuPrincipal">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#"> Inicio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#productos"> Productos</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Contacto</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     </header>
+
+    <br>
+
     <main style="width: fit-content; margin-inline: auto;">
         <div style="display: flex; align-items: center; flex-direction: column;">
-            <h2>Hatsune Miku</h2>
-            <img src="imagenes/HatsuneMiku.webp" width="300">
+            <h1>Hatsune Miku</h1>
+            <br>
+            <div class="image_container">
+                <img src="imagenes/HatsuneMiku.webp" width="300">
+            </div>
+            <br>
             <p>POP UP PARADE Hatsune Miku: Cinnamoroll Collaboration Ver. L Size</p>
-            <h3>Precio: $56.000 <br> Orden anticipada </h3>
+            <h3>Precio: $56.000 - Orden anticipada </h3>
+            <br>
             <a href="" class="btn btn-success btn-lg">
                 Comprar
             </a>
+            <br>
         </div>
     </main>
 
     <hr>
 
-    <section id="contacto">
+    <section id="contacto" class="ps-3">
         <h2>Contacto</h2>
-        <p>Direccion: Av. Pepito Suarez 435</p>
-        <p>Telefono: +56 9 5234 6543</p>
-        <p>Correo: contacto@figureshop.com</p>
+        <p>
+            Direccion: Av. Pepito Suarez 435<br>
+            Telefono: +56 9 5234 6543<br>
+            Correo: contacto@figureshop.com<br>
+        </p>
     </section>
     
-    <footer>
+    <footer class="ps-3">
         <p>@2026 Ultimate Figure Shop</p>
     </footer>
+
     <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous">
-</script>
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous">
+    </script>
 </body>
 </html>
