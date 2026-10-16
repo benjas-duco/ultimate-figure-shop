@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Outlet, useLocation } from 'react-router-dom';
-import Navbar from './Navbar.jsx';
-import Footer from './Footer.jsx';
+import Navbar from './molecules/Navbar.jsx';
+import Footer from './molecules/Footer.jsx';
 
 // Al cambiar de ruta: si hay #ancla hace scroll hasta ella, si no vuelve arriba
 function ScrollManager() {

@@ -1,4 +1,4 @@
-import ProductCard from '../components/ProductCard.jsx';
+import ProductCard from '../components/organism/ProductCard.jsx';
 import { products } from '../data/products.js';
 
 export default function Home() {
