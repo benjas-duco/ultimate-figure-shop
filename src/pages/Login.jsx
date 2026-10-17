@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import FormField from '../components/FormField.jsx';
 import useForm from '../hooks/useForm.js';
 import { validateEmail, validatePassword } from '../utils/validators.js';
@@ -15,21 +15,33 @@ const validate = (v) => {
 
 export default function Login() {
   const [mensaje, setMensaje] = useState(null);
-  const { field, handleSubmit, handleCheckboxChange } = useForm(
-    { email: '', password: '', recordarme: false },
+
+  const savedValues = JSON.parse(localStorage.getItem('login_data')) || {
+    email: '',
+    password: '',
+    recordarme: false
+  };
+
+  const { values, field, handleSubmit, handleCheckboxChange } = useForm(
+    savedValues,
     validate
   );
+
+  useEffect(() => {
+    localStorage.setItem('login_data', JSON.stringify(values));
+  }, [values]);
 
   const onSubmit = handleSubmit(
     () => {
       setMensaje({ tipo: 'success', texto: 'Inicio de sesión exitoso.' });
-      // Aquí puedes agregar la lógica real de autenticación (fetch al backend, etc.)
+      localStorage.removeItem('login_data');
     },
-    () =>
+    () => {
       setMensaje({
         tipo: 'danger',
         texto: 'Por favor completa correctamente todos los campos obligatorios.',
       })
+    }
   );
 
   return (
