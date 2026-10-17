@@ -23,45 +23,61 @@ export default function Product() {
   if (!product) return <NotFound />;
 
   return (
-    <main style={{ width: 'fit-content', marginInline: 'auto' }}>
-      <div style={{ display: 'flex', alignItems: 'center', flexDirection: 'column' }}>
-        <h1>{product.name}</h1>
-        <br />
-        <div className="image_container">
-          <img src={product.image} alt={product.name} width="300" />
+    <main className="product_main">
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'flex-start',
+          justifyContent: 'center',
+          gap: '50px',
+          width: '100%',
+          maxWidth: '1100px',
+          margin: '0 auto'
+        }}
+      >
+        <div className="product_image_container" style={{ flexShrink: 0 }}>
+          <img src={product.image} alt={product.name} />
         </div>
-        <br />
-        <p>{product.description}</p>
-        <h3 className="text-center">
-          Precio: {formatPrice(product.price)}
-          {product.preorder && (
-            <>
-              <br />
-              Orden anticipada
-            </>
-          )}
-        </h3>
-        <br />
 
-        <div style = {{display: 'flex', gap: '20px', alignItems: 'center'}}>
-          <BotonQuitar
-            onClick = {quitarProducto}
-          />
-          
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-start', textAlign: 'left', maxWidth: '500px'}}>
+          <h1>
+            {product.name}
+          </h1>
+
           <p>
-            {cantidad}
+            {product.description}
           </p>
 
-          <BotonAgregar
-            onClick = {agregarProducto}
-          />
+          <h3 style={{ marginBottom: '20px' }}>
+            Precio: {formatPrice(product.price)}
+            {product.preorder && (
+              <>
+                <br />
+                Orden anticipada
+              </>
+            )}
+          </h3>
 
-          <BotonComprar />
+          <div style={{display: 'flex', gap: '12px', alignItems: 'center', marginBottom: '25px'}}>
+            <BotonQuitar 
+              onClick={quitarProducto} 
+            />
+
+            <p>
+              {cantidad}
+            </p>
+
+            <BotonAgregar 
+              onClick={agregarProducto} 
+            />
+
+            <BotonComprar />
+          </div>
+          <Link to="/#productos">
+            ← Volver a productos
+          </Link>
         </div>
-
-        <br />
-        <Link to="/#productos">← Volver a productos</Link>
-        <br />
       </div>
     </main>
   );
