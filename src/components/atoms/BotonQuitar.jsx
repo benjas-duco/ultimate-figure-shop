@@ -3,10 +3,10 @@ import Button from 'react-bootstrap/Button';
 function BotonQuitar(props) {
     return(
         <Button
-            variant="warning"
-            onClick={props.onClick}
+            variant = "outline-secondary"
+            onClick = {props.onClick}
         >
-            Quitar
+            -
         </Button>
     )
 }

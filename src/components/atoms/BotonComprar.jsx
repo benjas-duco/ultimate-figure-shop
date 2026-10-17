@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 function BotonComprar(props) {
     return (
         <Button
-            variant="primary"
+            variant="success"
             onClick={props.onClick}
         >
             Comprar

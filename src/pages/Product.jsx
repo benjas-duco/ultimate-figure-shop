@@ -1,8 +1,22 @@
 import { useParams, Link } from 'react-router-dom';
 import { getProductById, formatPrice } from '../data/products.js';
 import NotFound from './NotFound.jsx';
+import { useState } from 'react';
+import BotonComprar from '../components/atoms/BotonComprar.jsx';
+import BotonAgregar from '../components/atoms/BotonAgregar.jsx';
+import BotonQuitar from '../components/atoms/BotonQuitar.jsx';
 
 export default function Product() {
+  const [cantidad, setCantidad] = useState(0);
+
+  function agregarProducto() {
+      setCantidad(cantidad + 1);
+  }
+
+    function quitarProducto() {
+      setCantidad(cantidad > 0 ? cantidad - 1 : 0 );
+  }
+
   const { id } = useParams();
   const product = getProductById(id);
 
@@ -28,9 +42,23 @@ export default function Product() {
           )}
         </h3>
         <br />
-        <button type="button" className="btn btn-success btn-lg">
-          Comprar
-        </button>
+
+        <div style = {{display: 'flex', gap: '20px', alignItems: 'center'}}>
+          <BotonQuitar
+            onClick = {quitarProducto}
+          />
+          
+          <p>
+            {cantidad}
+          </p>
+
+          <BotonAgregar
+            onClick = {agregarProducto}
+          />
+
+          <BotonComprar />
+        </div>
+
         <br />
         <Link to="/#productos">← Volver a productos</Link>
         <br />

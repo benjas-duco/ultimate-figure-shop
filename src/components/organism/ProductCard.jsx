@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { formatPrice } from '../../data/products.js';
 
 export default function ProductCard({ product }) {
+
   return (
     <div style={{ width: 300, marginInline: 10 }}>
       <h2 className="center">{product.name}</h2>

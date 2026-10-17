@@ -3,10 +3,10 @@ import Button from 'react-bootstrap/Button';
 function BotonAgregar(props) {
     return (
         <Button
-            variant="success"
-            onClick={props.onClick}
+            variant = "outline-secondary" 
+            onClick = {props.onClick}
         >
-            Agregar
+            +
         </Button>
     );
 }
