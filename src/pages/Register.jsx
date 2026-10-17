@@ -27,21 +27,35 @@ const validate = (v) => {
 
 export default function Register() {
   const [mensaje, setMensaje] = useState(null);
-  const { field, handleSubmit, handleCheckboxChange } = useForm(
-    { nombre: '', email: '', password: '', confirmarPassword: '', terminos: false },
+
+  const savedValues = JSON.parse(localStorage.getItem('register_data')) || {
+    nombre: '',
+    email: '',
+    password: '',
+    confirmarPassword: '',
+    terminos: false
+  };
+
+  const { values, field, handleSubmit, handleCheckboxChange } = useForm(
+    savedValues,
     validate
   );
+
+  useEffect(() => {
+    localStorage.setItem('register_data', JSON.stringify(values));
+  }, [values]);
 
   const onSubmit = handleSubmit(
     () => {
       setMensaje({ tipo: 'success', texto: 'Registro exitoso. ¡Bienvenido/a!' });
-      // Aquí puedes agregar la lógica real de registro (fetch al backend, etc.)
+      localStorage.removeItem('register_data');
     },
-    () =>
+    () => {
       setMensaje({
         tipo: 'danger',
         texto: 'Por favor completa correctamente todos los campos obligatorios.',
-      })
+      });
+    }
   );
 
   return (
