@@ -7,7 +7,7 @@ export default function Home() {
       <section id="productos">
         <h1 className="center">Productos destacados</h1>
         <br />
-        <div className="d-flex center">
+        <div className="home_productos">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

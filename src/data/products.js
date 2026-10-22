@@ -24,6 +24,30 @@ export const products = [
     image: '/imagenes/kirby.webp',
     preorder: true,
   },
+  {
+    id: 4,
+    name: 'Marin Kitagawa Nendoroid',
+    description: 'My Dress-Up Darling Temporada 2 - Figura Nendoroid Marin Kitagawa: Uniforme de Invierno Ver.',
+    price: 43.990,
+    image: '/imagenes/MarinKitagawaS2_Nendoroid.webp',
+    preorder: true
+  },
+  {
+    id: 5,
+    name: 'Wakana Gojo Nendoroid',
+    description: 'My Dress-Up Darling - Figura Nendoroid Wakana Gojo (Reedición)',
+    price: 43.990,
+    image: '/imagenes/WakanaGojo_Nendoroid.webp',
+    preorder: true
+  },
+  {
+    id: 6,
+    name: 'Hatsune Miku Monitoring Ver.',
+    description: 'My Dress-Up Darling - Figura Nendoroid Wakana Gojo (Reedición)',
+    price: 50.990,
+    image: '/imagenes/MikuMonitoring_Nendoroid.webp',
+    preorder: true
+  }
 ];
 
 export const getProductById = (id) => products.find((p) => p.id === Number(id));

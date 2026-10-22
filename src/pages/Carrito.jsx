@@ -122,7 +122,6 @@ export default function Carrito() {
                 </tbody>
             </Table>
 
-            {/* Resumen final y acciones */}
             <div className="d-flex justify-content-between align-items-center mt-4 p-3 bg-light rounded shadow-sm">
                 <Button variant="danger" onClick={vaciarCarrito}>
                 Vaciar Carrito
