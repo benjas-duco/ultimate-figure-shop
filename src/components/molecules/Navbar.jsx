@@ -40,6 +40,11 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
+                <Link className="nav-link" to="/carrito" onClick={close}>
+                  Carrito
+                </Link>
+              </li>
+              <li className="nav-item">
                 <NavLink className={linkClass} to="/register" onClick={close}>
                   Registrarse
                 </NavLink>

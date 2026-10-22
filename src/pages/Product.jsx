@@ -2,9 +2,9 @@ import { useParams, Link } from 'react-router-dom';
 import { getProductById, formatPrice } from '../data/products.js';
 import NotFound from './NotFound.jsx';
 import { useState, useEffect   } from 'react';
-import BotonComprar from '../components/atoms/BotonComprar.jsx';
 import BotonAgregar from '../components/atoms/BotonAgregar.jsx';
 import BotonQuitar from '../components/atoms/BotonQuitar.jsx';
+import BotonAgregarCarrito from '../components/atoms/BotonAgregarCarrito.jsx';
 
 export default function Product() {
   const { id } = useParams();
@@ -13,7 +13,7 @@ export default function Product() {
 
   const [cantidad, setCantidad] = useState(() => {
     const saved = localStorage.getItem(storageKey);
-    return saved != null ? Number(saved) : 0;
+    return saved != null ? Number(saved) : 1;
   });
 
   useEffect(() =>{
@@ -28,6 +28,31 @@ export default function Product() {
       setCantidad(cantidad > 0 ? cantidad - 1 : 0 );
   }
 
+
+  function handleAgregarAlCarrito(){
+    const cantidadAComprar = cantidad <= 0 ? 1 : cantidad;
+    const carritoActual = JSON.parse(localStorage.getItem('carrito_compras')) || [];
+    const verifExistente = carritoActual.findIndex(item => item.id === product.id);
+
+    if(verifExistente !== -1){
+      carritoActual[verifExistente].quantity += cantidadAComprar;
+      console.log("El producto ya existía, nueva cantidad acumulada:", carritoActual[verifExistente].quantity);
+    } else {
+      const nuevoItem = {
+        id: product.id,
+        name: product.name,
+        price: product.price,
+        image: product.image,
+        quantity: cantidadAComprar
+      };
+      carritoActual.push(nuevoItem);
+      console.log("Producto nuevo agregado al arreglo:", nuevoItem);
+    }
+
+    localStorage.setItem('carrito_compras', JSON.stringify(carritoActual));
+    alert(`¡Se han añadido ${cantidadAComprar} unidad(es) al carrito!`);
+  }
+  
   if (!product) return <NotFound />;
 
   return (
@@ -80,7 +105,9 @@ export default function Product() {
               onClick={agregarProducto} 
             />
 
-            <BotonComprar />
+            <BotonAgregarCarrito 
+              onClick={handleAgregarAlCarrito} 
+            />
           </div>
           <Link to="/#productos">
             ← Volver a productos
