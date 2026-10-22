@@ -3,6 +3,7 @@ export const products = [
   {
     id: 1,
     name: 'Hatsune Miku',
+    category: "POP UP PARADE",
     description: 'POP UP PARADE Hatsune Miku: Cinnamoroll Collaboration Ver. L Size',
     price: 56990,
     image: '/imagenes/HatsuneMiku.webp',
@@ -11,6 +12,7 @@ export const products = [
   {
     id: 2,
     name: 'Frieren',
+    category: "POP UP PARADE",
     description: 'POP UP PARADE Frieren: Braids Ver.',
     price: 30990,
     image: '/imagenes/Frieren.webp',
@@ -19,6 +21,7 @@ export const products = [
   {
     id: 3,
     name: 'Kirby',
+    category: "POP UP PARADE",
     description: 'POP UP PARADE Kirby: Wheelie Rider Ver.',
     price: 40990,
     image: '/imagenes/kirby.webp',
@@ -27,6 +30,7 @@ export const products = [
   {
     id: 4,
     name: 'Marin Kitagawa Nendoroid',
+    category: "Nendoroid",
     description: 'My Dress-Up Darling Temporada 2 - Figura Nendoroid Marin Kitagawa: Uniforme de Invierno Ver.',
     price: 43990,
     image: '/imagenes/MarinKitagawaS2_Nendoroid.webp',
@@ -35,6 +39,7 @@ export const products = [
   {
     id: 5,
     name: 'Wakana Gojo Nendoroid',
+    category: "Nendoroid",
     description: 'My Dress-Up Darling - Figura Nendoroid Wakana Gojo (Reedición)',
     price: 43990,
     image: '/imagenes/WakanaGojo_Nendoroid.webp',
@@ -43,6 +48,7 @@ export const products = [
   {
     id: 6,
     name: 'Hatsune Miku Monitoring Ver.',
+    category: "Nendoroid",
     description: 'My Dress-Up Darling - Figura Nendoroid Wakana Gojo (Reedición)',
     price: 50990,
     image: '/imagenes/MikuMonitoring_Nendoroid.webp',

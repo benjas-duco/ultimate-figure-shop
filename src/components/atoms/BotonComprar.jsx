@@ -4,9 +4,10 @@ function BotonComprar(props) {
     return (
         <Button
             variant="success"
+            size="lg"
             onClick={props.onClick}
         >
-            Comprar
+            Pagar / Finalizar Compra
         </Button>
     );
 }

@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 import Button from 'react-bootstrap/Button';
 import { formatPrice } from '../data/products.js';
+import BotonComprar from '../components/atoms/BotonComprar.jsx';
+
 
 export default function Carrito() {
     const [cartItems, setCartItems] = useState(() => {
@@ -11,7 +13,6 @@ export default function Carrito() {
         return saved ? JSON.parse(saved) : [];
     });
 
-    // 1. Corregido: Agregado el operador * para calcular el total
     const total = cartItems.reduce((acc, item) => acc + (item.price * item.quantity), 0);
 
     function actualizarCarrito(nuevoCarrito){
@@ -28,7 +29,6 @@ export default function Carrito() {
 
     function decrementarCantidad(id){
         const actualizado = cartItems.map((item) =>
-            // 2. Corregido: Agregado - 1 correctamente en la condición
             item.id === id && item.quantity > 1 ? { ...item, quantity: item.quantity - 1 } : item
         );
         actualizarCarrito(actualizado);
@@ -43,7 +43,6 @@ export default function Carrito() {
 
     function vaciarCarrito() {
         setCartItems([]);
-        // 3. Corregido: removeItem en lugar de setItem vacío
         localStorage.removeItem('carrito_compras');
     }
 
@@ -131,16 +130,9 @@ export default function Carrito() {
                 <h3 className="mb-2">
                     Total: <span className="text-success">{formatPrice(total)}</span>
                 </h3>
-                <Button
-                    variant="success"
-                    size="lg"
-                    onClick={() => {
-                    alert('¡Compra simulada con éxito!');
-                    vaciarCarrito();
-                    }}
-                >
-                    Pagar / Finalizar Compra
-                </Button>
+                <BotonComprar
+                    onClick={vaciarCarrito}
+                />
                 </div>
             </div>
             </div>
