@@ -34,9 +34,8 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                {/* Se usa Link (no NavLink) porque apunta a un ancla dentro de Inicio */}
-                <Link className="nav-link" to="/#productos" onClick={close}>
-                  Productos
+                <Link className="nav-link" to="/catalogo" onClick={close}>
+                  Catálogo
                 </Link>
               </li>
               <li className="nav-item">
