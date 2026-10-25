@@ -34,6 +34,8 @@ src/
 | `/figure/:id` | Detalle de figura |
 | `/login` | Iniciar sesión |
 | `/register` | Registro |
+| `/catalogo` | Catalogo |
+| `/carrito` | Carrito |
 
 Para agregar un producto basta con añadirlo a `src/data/products.js`.
 
