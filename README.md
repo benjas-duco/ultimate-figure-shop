@@ -36,3 +36,12 @@ src/
 | `/register` | Registro |
 
 Para agregar un producto basta con añadirlo a `src/data/products.js`.
+
+## Pruebas unitarias
+
+```bash
+npm install --save-dev karma karma-jasmine jasmine-core karma-chrome-launcher  # installar jasmin y karma
+npm install --save-dev karma-coverage                                          # para crear documento de cobertura de testing
+npm run test                                                                   # ejecutar pruebas unitarias de jasmin y karma
+```
+Al ejecutar estos comandos se crea automaticamente un archivo llamado coverage/ dentro de este archivo se encuentra index.html el cual contiene el documento de cobertura de testing
