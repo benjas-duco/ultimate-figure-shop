@@ -1,5 +1,5 @@
 import { products } from "../src/data/products.js";
-import { filtrarProductos } from "../src/utils/catalogUtils.js";
+import { filtrarProductos } from "../src/utils/catalogoUtils.js";
 
 describe("Pruebas unitarias para el filtro real del catalogo", function () {
   it("Deberia retornar todos los productos si la categoria es 'Todos'", function () {
