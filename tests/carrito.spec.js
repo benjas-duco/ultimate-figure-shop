@@ -1,45 +1,56 @@
 import { products } from "../src/data/products.js";
+import {
+  calcularSubtotal,
+  calcularTotalCarrito,
+  incrementarItemCantidad,
+  decrementarItemCantidad,
+  eliminarItemCarrito,
+} from "../src/utils/cartUtils.js";
 
+describe("Pruebas unitarias de la logica real del Carrito", function () {
+  it("Deberia calcular el subtotal multiplicando price * quantity", function () {
+    const figura = products[0];
+    const cantidadComprada = 2;
 
-describe("Pruebas unitarias de la pagina Carrito", function(){
+    const subtotal = calcularSubtotal(figura.price, cantidadComprada);
+    expect(subtotal).toBe(figura.price * 2);
+  });
 
-    function calcularSubtotal(precio, cantidad){
-        if(cantidad <= 0) return 0;
-        return precio * cantidad
-    }
+  it("Deberia devolver 0 con cantidades 0 o negativas", function () {
+    const figura = products[0];
 
-    function calcularTotalCarrito(items){
-        return items.reduce((acc, item) => acc + (item.precio * item.cantidad), 0);
-    }
+    expect(calcularSubtotal(figura.price, 0)).toBe(0);
+    expect(calcularSubtotal(figura.price, -2)).toBe(0);
+  });
 
-    it("Deberia calcular el subtotal de solo un producto multiplicando precio * cantidad", function(){
-        const Figura = products[0] //Primera figura en la lista de products
-        const cantidadComprada = 2;
+  it("Deberia calcular el total de diferentes figuras en el carrito", function () {
+    const figura1 = products[0];
+    const figura2 = products[1];
+    const carrito = [
+      { id: figura1.id, price: figura1.price, quantity: 1 },
+      { id: figura2.id, price: figura2.price, quantity: 2 },
+    ];
 
-        const subtotal = calcularSubtotal(Figura.price, cantidadComprada);
+    const total = calcularTotalCarrito(carrito);
+    const totalEsperado = figura1.price * 1 + figura2.price * 2;
 
-        //Verificacion del precio
-        expect(subtotal).toEqual(Figura.price * 2);
-    });
+    expect(total).toBe(totalEsperado);
+  });
 
-    it("Deberia devolver 0 calculando precio con cantidades 0 o negativos", function(){
-        const Figura = products[0]
+  it("Deberia incrementar, decrementar sin bajar de 1 y eliminar productos", function () {
+    const base = [
+      { id: 1, price: 10000, quantity: 1 },
+      { id: 2, price: 20000, quantity: 2 },
+    ];
 
-        expect(calcularSubtotal(Figura.price, 0)).toEqual(0);
-        expect(calcularSubtotal(Figura.price, -2)).toEqual(0);
-    });
+    const sumado = incrementarItemCantidad(base, 1);
+    expect(sumado[0].quantity).toBe(2);
 
-    it("Deberia calcular el total del precio de diferentes figuras en el carrito", function(){
-        const Figura = products[0]
-        const Figura2 = products[1]
-        const carrito = [
-            {id:Figura.id, precio: Figura.price, cantidad: 1},
-            {id:Figura2.id, precio: Figura2.price, cantidad: 2}
-        ];
+    const restadoNoMenorA1 = decrementarItemCantidad([{ id: 1, price: 10000, quantity: 1 }], 1);
+    expect(restadoNoMenorA1[0].quantity).toBe(1);
 
-        const total = calcularTotalCarrito(carrito);
-        const totalEsperado = (Figura.price * 1) + (Figura2.price * 2);
-
-        expect(total).toEqual(totalEsperado);
-    });
-})
+    const sinItem2 = eliminarItemCarrito(base, 2);
+    expect(sinItem2.length).toBe(1);
+    expect(sinItem2[0].id).toBe(1);
+  });
+});
