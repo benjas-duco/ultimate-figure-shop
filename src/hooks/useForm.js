@@ -49,5 +49,9 @@ export default function useForm(initialValues, validate) {
     onBlur: handleBlur,
   });
 
-  return { values, errors, field, handleSubmit, handleCheckboxChange };
+  const setFieldValue = (name, value) => {
+    setValues((prev) => ({ ...prev, [name]: value }));
+  };
+
+  return { values, errors, field, handleSubmit, handleCheckboxChange, setFieldValue };
 }
