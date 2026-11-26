@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import FormField from '../components/FormField.jsx';
 import useForm from '../hooks/useForm.js';
 import { validateEmail, validatePassword } from '../utils/validators.js';
@@ -19,7 +19,7 @@ export default function Login() {
   const savedValues = JSON.parse(localStorage.getItem('login_data')) || {
     email: '',
     password: '',
-    recordarme: false
+    recordarme: false,
   };
 
   const { values, field, handleSubmit, handleCheckboxChange } = useForm(
@@ -40,7 +40,7 @@ export default function Login() {
       setMensaje({
         tipo: 'danger',
         texto: 'Por favor completa correctamente todos los campos obligatorios.',
-      })
+      });
     }
   );
 
@@ -52,8 +52,20 @@ export default function Login() {
         <div className="d-flex justify-content-center">
           <div className="card p-4" style={{ width: 350 }}>
             <form onSubmit={onSubmit} noValidate>
-              <FormField {...field('email')} label="Correo electrónico" type="email" placeholder="ejemplo@correo.com" />
-              <FormField {...field('password')} label="Contraseña" type="password" placeholder="Ingresa tu contraseña" />
+              <FormField
+                {...field('email')}
+                label="Correo electrónico"
+                type="email"
+                placeholder="usuario@duoc.cl / @gmail.com"
+                maxLength={100}
+              />
+              <FormField
+                {...field('password')}
+                label="Contraseña"
+                type="password"
+                placeholder="4 a 10 caracteres"
+                maxLength={10}
+              />
               <FormField
                 {...field('recordarme')}
                 id="recordarme"
