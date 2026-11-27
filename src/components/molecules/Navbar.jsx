@@ -53,6 +53,11 @@ export default function Navbar() {
                   Iniciar Sesión
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className={linkClass} to="/nosotros" onClick={close}>
+                  Nosotros
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
