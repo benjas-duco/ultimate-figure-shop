@@ -10,6 +10,7 @@ import Catalogo from './pages/Catalogo.jsx';
 import Nosotros from './pages/Nosotros.jsx';
 import Blogs from './pages/Blogs.jsx';
 import BlogDetail from './pages/BlogDetail.jsx';
+import Contacto from './pages/Contacto.jsx';
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="nosotros" element={<Nosotros />} />
         <Route path="blogs" element={<Blogs />} />
         <Route path="blogs/:id" element={<BlogDetail />} />
+        <Route path="contacto" element={<Contacto />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="carrito" element={<Carrito />} />

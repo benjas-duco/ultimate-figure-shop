@@ -63,6 +63,11 @@ export default function Navbar() {
                   Blogs
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className={linkClass} to="/contacto" onClick={close}>
+                  Contacto
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
