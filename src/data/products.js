@@ -49,7 +49,7 @@ export const products = [
     id: 6,
     name: 'Hatsune Miku Monitoring Ver.',
     category: "Nendoroid",
-    description: 'My Dress-Up Darling - Figura Nendoroid Wakana Gojo (Reedición)',
+    description: 'Hatsune Miku - Nendoroid Hatsune Miku: Figura Ver. de Monitoreo',
     price: 50990,
     image: '/imagenes/MikuMonitoring_Nendoroid.webp',
     preorder: true

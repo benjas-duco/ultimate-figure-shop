@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import ProductCard from '../components/organism/ProductCard.jsx';
 import { products } from '../data/products.js';
-import { filtrarProductos } from '../utils/catalogUtils.js';
+import { filtrarProductos } from '../utils/catalogoUtils.js';
 
 export default function Catalogo() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
