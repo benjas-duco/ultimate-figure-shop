@@ -58,6 +58,11 @@ export default function Navbar() {
                   Nosotros
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink className={linkClass} to="/blogs" onClick={close}>
+                  Blogs
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>

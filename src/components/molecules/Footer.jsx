@@ -18,6 +18,9 @@ export default function Footer() {
           <Link to="/nosotros" className="btn btn-outline-dark btn-sm">
             Nosotros
           </Link>
+          <Link to="/blogs" className="btn btn-outline-dark btn-sm">
+            Blogs
+          </Link>
         </div>
       </section>
 
