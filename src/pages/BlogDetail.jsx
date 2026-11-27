@@ -1,8 +1,23 @@
 import { Link, useParams } from 'react-router-dom';
-import Container from 'react-bootstrap/Container';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import { BLOG_POSTS } from './Blogs.jsx';
+
+export const BLOG_POSTS = [
+  {
+    id: '1',
+    titulo: 'Caso Curioso #1: Detalles clave en figuras Nendoroid',
+    resumenCorto: 'Consejos rápidos para cuidar piezas, rostros y empaques.',
+    contenidoLargo:
+      'Las figuras Nendoroid destacan por su tamaño compacto, expresiones faciales intercambiables y accesorios detallados. Conviene manipularlas con cuidado, evitar el sol directo y conservar su caja original.',
+    imagen: '/imagenes/MarinKitagawaS2_Nendoroid.webp',
+  },
+  {
+    id: '2',
+    titulo: 'Caso Curioso #2: Exhibición y cuidado en vitrinas',
+    resumenCorto: 'Cómo mantener tus figuras limpias y estables en tu espacio.',
+    contenidoLargo:
+      'Una buena exhibición combina superficies estables, protección frente al polvo y limpiezas periódicas suaves para mantener tus figuras en buen estado.',
+    imagen: '/imagenes/kirby.webp',
+  },
+];
 
 export default function BlogDetail() {
   const { id } = useParams();
@@ -10,34 +25,33 @@ export default function BlogDetail() {
 
   if (!post) {
     return (
-      <Container className="my-5 text-center" style={{ minHeight: '60vh' }}>
-        <h1 className="h3 mb-3">Artículo no encontrado</h1>
-        <Button as={Link} to="/blogs" variant="dark">
-          ← Volver a Blogs
-        </Button>
-      </Container>
+      <main className="p-4">
+        <h1 className="center">Artículo no encontrado</h1>
+        <div className="center mt-3">
+          <Link to="/blogs" className="btn btn-dark">
+            Volver a Blogs
+          </Link>
+        </div>
+      </main>
     );
   }
 
   return (
-    <Container className="my-5" style={{ maxWidth: 800, minHeight: '60vh' }}>
-      <Card className="shadow-sm">
-        <Card.Img
-          variant="top"
-          src={post.imagen}
-          alt={post.titulo}
-          style={{ maxHeight: 380, objectFit: 'cover' }}
-        />
-        <Card.Body className="p-4">
-          <Card.Title as="h1" className="h3 mb-3">
-            {post.titulo}
-          </Card.Title>
-          <Card.Text style={{ lineHeight: 1.7 }}>{post.contenidoLargo}</Card.Text>
-          <Button as={Link} to="/blogs" variant="outline-dark" className="mt-3">
+    <main>
+      <section className="product_main gap-4 flex-wrap">
+        <div className="product_image_container">
+          <img src={post.imagen} alt={post.titulo} />
+        </div>
+        <div style={{ maxWidth: 600 }}>
+          <h1>{post.titulo}</h1>
+          <p className="mt-3" style={{ lineHeight: 1.7 }}>
+            {post.contenidoLargo}
+          </p>
+          <Link to="/blogs" className="btn btn-outline-dark mt-3">
             ← Volver a Blogs
-          </Button>
-        </Card.Body>
-      </Card>
-    </Container>
+          </Link>
+        </div>
+      </section>
+    </main>
   );
 }
