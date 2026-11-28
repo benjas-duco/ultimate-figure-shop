@@ -5,7 +5,6 @@ import Product from './pages/Product.jsx';
 import Login from './pages/Login.jsx';
 import Register from './pages/Register.jsx';
 import NotFound from './pages/NotFound.jsx';
-import Carrito from './pages/Carrito.jsx';
 import Catalogo from './pages/Catalogo.jsx';
 import Nosotros from './pages/Nosotros.jsx';
 import Blogs from './pages/Blogs.jsx';
@@ -13,6 +12,9 @@ import BlogDetail from './pages/BlogDetail.jsx';
 import Contacto from './pages/Contacto.jsx';
 import Categorias from './pages/Categorias.jsx';
 import Ofertas from './pages/Ofertas.jsx';
+import Checkout from './pages/Checkout.jsx';
+import PagoCorrecto from './pages/PagoCorrecto.jsx';
+import PagoError from './pages/PagoError.jsx';
 
 export default function App() {
   return (
@@ -28,9 +30,11 @@ export default function App() {
         <Route path="categorias" element={<Categorias />} />
         <Route path="categorias/:categoria" element={<Categorias />} />
         <Route path="ofertas" element={<Ofertas />} />
+        <Route path="checkout" element={<Checkout />} />
+        <Route path="pago-correcto" element={<PagoCorrecto />} />
+        <Route path="pago-error" element={<PagoError />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="carrito" element={<Carrito />} />
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>

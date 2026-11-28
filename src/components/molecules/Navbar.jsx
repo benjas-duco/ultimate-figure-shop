@@ -49,7 +49,7 @@ export default function Navbar() {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/carrito" onClick={close}>
+                <Link className="nav-link" to="/checkout" onClick={close}>
                   Carrito
                 </Link>
               </li>
