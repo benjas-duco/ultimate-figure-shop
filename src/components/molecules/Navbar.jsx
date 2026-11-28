@@ -39,6 +39,16 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
+                <NavLink className={linkClass} to="/categorias" onClick={close}>
+                  Categorías
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink className={linkClass} to="/ofertas" onClick={close}>
+                  Ofertas
+                </NavLink>
+              </li>
+              <li className="nav-item">
                 <Link className="nav-link" to="/carrito" onClick={close}>
                   Carrito
                 </Link>
@@ -51,21 +61,6 @@ export default function Navbar() {
               <li className="nav-item">
                 <NavLink className={linkClass} to="/login" onClick={close}>
                   Iniciar Sesión
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className={linkClass} to="/nosotros" onClick={close}>
-                  Nosotros
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className={linkClass} to="/blogs" onClick={close}>
-                  Blogs
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink className={linkClass} to="/contacto" onClick={close}>
-                  Contacto
                 </NavLink>
               </li>
             </ul>

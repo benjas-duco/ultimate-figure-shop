@@ -11,6 +11,8 @@ import Nosotros from './pages/Nosotros.jsx';
 import Blogs from './pages/Blogs.jsx';
 import BlogDetail from './pages/BlogDetail.jsx';
 import Contacto from './pages/Contacto.jsx';
+import Categorias from './pages/Categorias.jsx';
+import Ofertas from './pages/Ofertas.jsx';
 
 export default function App() {
   return (
@@ -23,6 +25,9 @@ export default function App() {
         <Route path="blogs" element={<Blogs />} />
         <Route path="blogs/:id" element={<BlogDetail />} />
         <Route path="contacto" element={<Contacto />} />
+        <Route path="categorias" element={<Categorias />} />
+        <Route path="categorias/:categoria" element={<Categorias />} />
+        <Route path="ofertas" element={<Ofertas />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
         <Route path="carrito" element={<Carrito />} />
