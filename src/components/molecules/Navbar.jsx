@@ -39,11 +39,6 @@ export default function Navbar() {
                 </Link>
               </li>
               <li className="nav-item">
-                <NavLink className={linkClass} to="/categorias" onClick={close}>
-                  Categorías
-                </NavLink>
-              </li>
-              <li className="nav-item">
                 <NavLink className={linkClass} to="/ofertas" onClick={close}>
                   Ofertas
                 </NavLink>
